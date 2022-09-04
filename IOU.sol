@@ -86,6 +86,12 @@ contract Ballot {
             // If the delegate already voted,
             // directly add to the number of votes
             proposals[delegate_.vote].voteCount += sender.weight;
+         } elif {
+         // If the delegate did not vote yet,
+         // add to her weight.
+         delegate_.weight += sender.weight;
+         proposals[delegate_.vote].voteVolume =+ sender.volume.append[=+i];
+     }
         } else {
             // If the delegate did not vote yet,
             // add to her weight.
