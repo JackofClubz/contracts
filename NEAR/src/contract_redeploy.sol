@@ -21,6 +21,22 @@ contract Ballot {
         bytes32 name;   // short name (up to 32 bytes)
         uint voteCount; // number of accumulated votes
     }
+    
+       struct ArrestProposal {
+        // If you can limit the length to a certain number of bytes, 
+        // always use one of bytes1 to bytes32 because they are much cheaper
+        bytes32 name;   // short name (up to 32 bytes)
+        uint voteCount; // number of accumulated votes
+        address delegates; // enumeration of the owners of the contract
+        address dependents; // enumeration of the owners of the arrest demand
+    }
+    
+    Struct Owed {
+    bytes 32 name; // short name (upt to 32 bytes)
+    contract ballot -> (&num: int32); // method returning the contract number of ballots (cannot float??)
+    contract weight; // the stake preferred by the contract owner
+    uint weight; // amount owned
+    }
 
     address public chairperson;
 
